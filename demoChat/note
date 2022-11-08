@@ -1,0 +1,4 @@
+khởi tạo project node js : npm init
+chạy express : npm install express
+chạy tap ejs : npm install ejs
+chạy socket io : npm install socket.io

@@ -9,12 +9,20 @@
     <script src="socket.io/socket.io.js"></script>
     <script>
         var socket = io("http://localhost:3000")
+        // lắng nghe server trả về dữ liệu
+        socket.on("Server-send-data",function(data){
+            $("#noi-dung").append(data);
+        })
         $(document).ready(function(){
-            
+            // client gửi dữ liệu lên server
+            $("#mr-A").click(function(){
+                socket.emit("Client-send-data",'hello')
+            })
         });
     </script>
 </head>
 <body>
-    <h1></h1>
+    <div id="mr-A">send data</div>
+    <h2 id="noi-dung"></h2>
 </body>
 </html>

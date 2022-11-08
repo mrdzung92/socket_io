@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo socket io</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script>
+        var socket = io("http://localhost:3000")
+        // lắng nghe server trả về dữ liệu
+        socket.on('server-send-color',function(data){
+            $('body').css('background',data);
+        })
+        $(document).ready(function(){
+        $('#do').click(function(){
+            socket.emit("client-send-color", 'red');
+        })
+        $('#xanh').click(function(){
+            socket.emit("client-send-color", 'blue');
+        })
+        $('#vang').click(function(){
+            socket.emit("client-send-color", 'yellow');
+        })
+        
+
+        });
+    </script>
+</head>
+<style>
+#do,#xanh,#vang {
+    width: 300px;
+    height: 70px;
+    cursor: pointer;
+}
+#do{
+    background-color: red;
+}
+#xanh{
+    background-color: blue;
+}
+#vang{
+    background-color: yellow;
+}
+</style>
+<body>
+   <div id="do">do</div>
+   <div id="xanh">xanh</div>
+   <div id="vang">vang</div>
+</body>
+</html>

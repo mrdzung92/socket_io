@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo chat</title>
+    <script src="jquery.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="layout.css">
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="login-form">
+            <h3>WHAT'S YOUR NAME?</h3>
+            <input type="text" id="user-name">
+            <input type="button" value="register" id="btn-register">
+        </div>
+        <div id="chat-form">
+            <div id="left">
+                <h5 id="box-title">Users online</h5>
+                <div id="box-content">
+                    <div class="user-online"> mrdzung</div>
+                    <div class="user-online"> mrdzung</div>
+                    <div class="user-online"> mrdzung</div>
+                    <div class="user-online"> mrdzung</div>
+                </div>
+            </div>
+            <div id="right">
+                <h5 class="chat-title" >
+                    hello<span id="current-user">mrdzung</span>
+                <button id="btn-logout">Logout</button>
+                </h5>
+                <div id="list-message">
+                    
+                </div>
+                <div>
+                    <input type="text" id="txt-message">
+                    <input type="button" value="send" id="btn-send-message">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="xuly.js"></script>
+</body>
+
+</html>
